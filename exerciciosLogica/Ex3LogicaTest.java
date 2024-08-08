@@ -18,8 +18,7 @@ public class Ex3LogicaTest {
 	}
 
     @Test
-    public void testCriptografarWithEmptyString() {
+    public void testCriptografarComStringEmBranco() {
         assertEquals("", Ex3Logica.criptografar(""));
     }
 }
-
