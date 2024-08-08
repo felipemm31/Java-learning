@@ -1,4 +1,4 @@
-package exerciciosLogica;
+package felipe;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -34,4 +34,56 @@ public class Ex1LogicaTest {
     public void testFormatarParteNome_Empty() {
         assertEquals("", Ex1Logica.formatarParteNome(""));
     }
+    
+    @Test
+    public void testOrdenarNomes() {
+        
+        String[][] pessoas = {
+            {"felipe", "mendes"},
+            {"mARINA", "oliveira"},
+            {"JULIANA", ""},
+            {"ana maria", "soUZA"},
+            {"lucas", ""},
+            {"ROberTo", "caRloS"},
+            {"CassiO", "RamoS"},
+        };
+
+        String[][] pessoasOrdenadas = {
+        		{"ROberTo", "caRloS"},
+        		{"JULIANA", ""},
+        		{"lucas", ""},
+        		{"felipe", "mendes"},
+        		{"mARINA", "oliveira"},
+        		{"CassiO", "RamoS"},
+        		{"ana maria", "soUZA"}                   
+        };
+
+        Ex1Logica.ordenarNomes(pessoas);
+
+        assertArrayEquals(pessoasOrdenadas, pessoas, "Os nomes não foram ordenados corretamente.");
+    }
+    
+    @Test
+    public void testOrdenarNomesSemSobrenomes() {
+        
+        String[][] pessoas = {
+            {"JULIANA", ""},
+            {"lucas", ""},
+            {"hugo", ""},
+            {"alvaro", ""}
+        };
+
+        String[][] pessoasOrdenadas = {
+        		{"alvaro", ""},
+        		{"hugo", ""},
+        		{"JULIANA", ""},
+        		{"lucas", ""}
+        };
+
+        Ex1Logica.ordenarNomes(pessoas);
+
+        assertArrayEquals(pessoasOrdenadas, pessoas, "Os nomes não foram ordenados corretamente.");
+    }
 }
+
+
