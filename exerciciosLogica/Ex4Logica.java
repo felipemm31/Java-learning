@@ -17,7 +17,7 @@ public class Ex4Logica {
         expressao = removerParentesesExternos(expressao);
 
         // verifica se a expressão é um número
-        if (isNumero(expressao)) {
+        if (isNumber(expressao)) {
             return Double.parseDouble(expressao);
         }
 
@@ -72,7 +72,7 @@ public class Ex4Logica {
         return expressao;
     }
 
-    private static boolean isNumero(String expressao) {
+    private static boolean isNumber(String expressao) {
         try {
             Double.parseDouble(expressao);
             return true;
@@ -83,16 +83,16 @@ public class Ex4Logica {
 
     private static int encontrarProximoOperador(String expressao) {
         int index = -1;
-        int level = 0;
+        int count = 0;
         for (int i = 0; i < expressao.length(); i++) {
             char ch = expressao.charAt(i);
             if (ch == '(') {
-                level++;
+            	count++;
             } else if (ch == ')') {
-                level--;
-            } else if ((ch == '+' || ch == '-') && level == 0) {
+            	count--;
+            } else if ((ch == '+' || ch == '-') && count == 0) {
                 index = i;
-            } else if ((ch == '*' || ch == '/') && level == 0 && index == -1) {
+            } else if ((ch == '*' || ch == '/') && count == 0 && index == -1) {
                 index = i;
             }
         }
