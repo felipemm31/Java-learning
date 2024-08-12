@@ -53,7 +53,7 @@ public class Ex1Logica {
 	            {"felipe", "mendes"},
 	            {"mARINA", "oliveira"},
 	            {"JULIANA", ""},
-	            {"ana maria", "soUZA"},
+	            {"ana maria", "MEDEL"},
 	            {"lucas", ""},
 	            {"ROberTo", "caRloS"},
 	            {"CassiO", "RamoS"},
