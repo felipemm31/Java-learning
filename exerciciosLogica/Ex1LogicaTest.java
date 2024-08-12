@@ -84,6 +84,51 @@ public class Ex1LogicaTest {
 
         assertArrayEquals(pessoasOrdenadas, pessoas, "Os nomes não foram ordenados corretamente.");
     }
+    
+    @Test
+    public void testOrdenarSobrenomesComAMesmaLetraInicial() {
+    	
+    	String[][] pessoas = {
+                {"joao", "Alves"},
+                {"joao", "Alvarenga"},
+                {"joao", "Amado"},
+                {"joao", "Almeida"}
+            };
+
+            String[][] pessoasOrdenadas = {
+            		{"joao", "Almeida"},
+            		{"joao", "Alvarenga"},
+            		{"joao", "Alves"},
+            		{"joao", "Amado"}
+            };
+
+            Ex1Logica.ordenarNomes(pessoas);
+
+            assertArrayEquals(pessoasOrdenadas, pessoas, "Os nomes não foram ordenados corretamente.");
+        }
+    
+    @Test
+    public void testOrdenarNomesComAMesmaLetraInicial() {
+    	
+    	String[][] pessoas = {
+                {"joao", ""},
+                {"jaspion", ""},
+                {"jose", ""},
+                {"james", ""}
+            };
+
+            String[][] pessoasOrdenadas = {
+            		{"james", ""},
+            		{"jaspion", ""},
+            		{"joao", ""},
+            		{"jose", ""}
+            };
+
+            Ex1Logica.ordenarNomes(pessoas);
+
+            assertArrayEquals(pessoasOrdenadas, pessoas, "Os nomes não foram ordenados corretamente.");
+    }
 }
+
 
 
